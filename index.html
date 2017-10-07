@@ -5,6 +5,10 @@
     <script src="addons/p5.dom.min.js"></script>
     <script src="addons/p5.sound.min.js"></script>
     <script src="sketch.js"></script>
+      <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
     <style> body {padding: 0; margin: 0;} </style>
       <script>
 var table;
@@ -30,10 +34,17 @@ function setup() {
   for (var r = 0; r < table.getRowCount(); r++)
     for (var c = 0; c < table.getColumnCount(); c++) {
       print(table.getString(r, c));
+        if (table.getString(r,c,).indexOf("Group")){
+            $('#container').append("<div>"+ table.getString(r,c) + "</div")
+        }
+        
+        
     }
 }
       </script>
   </head>
   <body>
+      <div id="container">
+      </div>
   </body>
 </html>
